@@ -62,12 +62,21 @@ function actualizarBotonesAAgregar(){
     botonesAgregar.forEach(boton =>{
         boton.addEventListener('click', agregarAlCarrito);
     });
-
-
-
 }
 
-const productosEnCarrito =  [];
+
+
+let productosEnCarrito;
+const productoEnCarritoLS = JSON.parse(localStorage.getItem('productos-en-carrito'));
+
+if(productoEnCarritoLS){
+     productosEnCarrito = productoEnCarritoLS;
+     actualizarContador();
+}else{
+  productosEnCarrito = [];
+}
+
+
 // Agrega los productos a un nuevo array
 function agregarAlCarrito(e){
     const idBoton = e.currentTarget.id;

@@ -1,4 +1,87 @@
 const productos = [
+    // REMERAS 
+    {
+        id:'remera-01',
+        titulo: 'Remera Love',
+        imagen: './imagenes/remeras/01.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 15000
+    },
+     {
+        id:'remera-02',
+        titulo: 'Musculosa Mia',
+        imagen: './imagenes/remeras/02.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 11000
+    },
+     {
+        id:'remera-03',
+        titulo: 'Musculosa Mia',
+        imagen: './imagenes/remeras/03.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 12000
+    },
+     {
+        id:'remera-04',
+        titulo: 'Remera California',
+        imagen: './imagenes/remeras/04.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 11500
+    },
+     {
+        id:'remera-05',
+        titulo: 'Musculosa Frida',
+        imagen: './imagenes/remeras/05.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 12200
+    },
+     {
+        id:'remera-06',
+        titulo: 'Top Black',
+        imagen: './imagenes/remeras/06.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 15000
+    },
+    {
+        id:'remera-07',
+        titulo: 'Top Norwich',
+        imagen: './imagenes/remeras/07.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 18000
+    },
+    {
+        id:'remera-08',
+        titulo: 'Top L.A',
+        imagen: './imagenes/remeras/08.webp',
+        categoria: {
+            nombre: 'Remeras',
+            id: 'remera'
+        },
+        precio: 12250
+    },
+    
+    
     // CAMPERAS -- 5.
     {
         id: 'campera-01',
@@ -8,7 +91,7 @@ const productos = [
             nombre: 'Camperas',
             id: 'camperas'
         },
-        precio: 67425
+        precio: 38425
     },
     {
         id: 'campera-02',
@@ -18,7 +101,7 @@ const productos = [
             nombre: 'camperas',
             id: 'camperas'
         },
-        precio: 74925
+        precio: 45925
     },
     {
         id: 'campera-03',
@@ -28,7 +111,7 @@ const productos = [
             nombre: 'camperas',
             id: 'camperas'
         },
-        precio: 119250
+        precio: 80000
     },
     {
         id: 'campera-04',
@@ -38,7 +121,7 @@ const productos = [
             nombre: 'camperas',
             id: 'camperas'
         },
-        precio: 1222
+        precio: 39000
     },
     {
         id: 'campera-05',
@@ -48,14 +131,14 @@ const productos = [
             nombre: 'camperas',
             id: 'camperas'
         },
-        precio: 71145
+        precio:45000
     },
 
     // PANTALONES (6)
 
     {
         id: 'pantalon-01',
-        titulo: 'PANTALON',
+        titulo: 'Jean Margarita',
         imagen: './imagenes/pantalones/01.webp',
         categoria: {
             nombre: 'Pantalones',
@@ -65,7 +148,7 @@ const productos = [
     },
     {
         id: 'pantalon-02',
-        titulo: 'PANTALON',
+        titulo: 'Jean Chicago',
         imagen: '../imagenes/pantalones/02.webp',
         categoria: {
             nombre: 'Pantalones',
@@ -75,7 +158,7 @@ const productos = [
     },
     {
         id: 'pantalon-03',
-        titulo: 'PANTALON',
+        titulo: 'Wide Leg Atlanta',
         imagen: '../imagenes/pantalones/03.webp',
         categoria: {
             nombre: 'Pantalones',
@@ -85,7 +168,7 @@ const productos = [
     },
     {
         id: 'pantalon-04',
-        titulo: 'PANTALON',
+        titulo: 'Jean Baggy Houston',
         imagen: '../imagenes/pantalones/04.webp',
         categoria: {
             nombre: 'Pantalones',
@@ -95,30 +178,28 @@ const productos = [
     },
     {
         id: 'pantalon-05',
-        titulo: 'PANTALON',
+        titulo: 'Pantalon Wide Leg',
         imagen: '../imagenes/pantalones/05.webp',
         categoria: {
             nombre: 'Pantalones',
             id: 'pantalon'
         },
 
-        precio: 7
+        precio: 55250
 
     },
     {
         id: 'pantalon-06',
-        titulo: 'PANTALONasdasd',
+        titulo: 'Pantalon Peonia',
         imagen: './imagenes/pantalones/06.webp',
         categoria: {
             nombre: 'Pantalones',
             id: 'pantalon'
         },
 
-        precio: 7234324
+        precio: 72500
 
     },
-
-    // REMERAS 
 
 ];
 

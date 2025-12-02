@@ -6,6 +6,7 @@
     --clr-white: #ececec;
     --clr-gray: #e2e2e2;
     --clr-red: #961818;
+    --clr-main-super-light: #d0c8f0;
 }
 
 * {
@@ -176,6 +177,25 @@ aside{
     flex-direction: column;
     gap: 0.25rem;
 }
+.producto {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;  
+    background-color: var(--clr-main);
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem; 
+}
+
+
+.producto-imagen {
+    width: 90%;      
+    max-width: 100%;  
+    border-radius: 1rem;
+    object-fit: cover; 
+}
+
 
 .producto-titulo{
     font-size: 1rem;
@@ -202,12 +222,12 @@ aside{
 .contenedor-carrito{
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.5em;
 }
 
 .carrito-vacio, .carrito-comprado{
     color: var(--clr-main);
-    /* display: none; */
+
 }
 
 .carrito-productos{
@@ -220,6 +240,7 @@ aside{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
     background-color: var(--clr-gray);
     color: var(--clr-main);
     padding: .5rem;
@@ -236,12 +257,13 @@ aside{
     font-size: .75rem;
 }
 
-/* Boton */
+/* Boton  eliminar - icono*/
 .carrito-producto-eliminar {
     border: 0;
     background-color: transparent;
     color: var(--clr-red);
     cursor: pointer;
+
 }
 
 .carrito-acciones {
