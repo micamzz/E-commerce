@@ -1,7 +1,7 @@
 const productos = [
     // CAMPERAS -- 5.
     {
-        id: 'pantalon-01',
+        id: 'campera-01',
         titulo: 'Campera Manchester',
         imagen: '../imagenes/camperas/01.webp',
         categoria: {
@@ -11,7 +11,7 @@ const productos = [
         precio: 67425
     },
     {
-        id: 'pantalon-02',
+        id: 'campera-02',
         titulo: 'Campera Baltimore',
         imagen: '../imagenes/camperas/02.webp',
         categoria: {
@@ -21,7 +21,7 @@ const productos = [
         precio: 74925
     },
     {
-        id: 'pantalon-03',
+        id: 'campera-03',
         titulo: 'Blazer Tokio',
         imagen: './imagenes/camperas/03.webp',
         categoria: {
@@ -31,7 +31,7 @@ const productos = [
         precio: 119250
     },
     {
-        id: 'pantalon-04',
+        id: 'campera-04',
         titulo: 'Campera coimbra',
         imagen: '../imagenes/camperas/04.webp',
         categoria: {
@@ -125,6 +125,7 @@ const productos = [
 const contenedorProductos = document.querySelector('#contenedor-productos');
 const botonesCategorias = document.querySelectorAll('.boton-categoria');
 const tituloPrinciapl = document.querySelector('.titulo-principal');
+let botonesAgregar = document.querySelectorAll('.producto-agregar')
 
 function cargarProductos(productosElegidos) {
 
@@ -145,7 +146,8 @@ function cargarProductos(productosElegidos) {
 
         contenedorProductos.append(div);
     })
-}
+    actualizarBotonesAAgregar();
+};
 
 
 cargarProductos(productos);
@@ -172,4 +174,5 @@ botonesCategorias.forEach(boton => {
 
     })
 
-})
+});
+
