@@ -1,131 +1,10 @@
-const productos = [
-    // CAMPERAS -- 5.
-    {
-        id: 'campera-01',
-        titulo: 'Campera Manchester',
-        imagen: '../imagenes/camperas/01.webp',
-        categoria: {
-            nombre: 'Camperas',
-            id: 'camperas'
-        },
-        precio: 67425
-    },
-    {
-        id: 'campera-02',
-        titulo: 'Campera Baltimore',
-        imagen: '../imagenes/camperas/02.webp',
-        categoria: {
-            nombre: 'camperas',
-            id: 'camperas'
-        },
-        precio: 74925
-    },
-    {
-        id: 'campera-03',
-        titulo: 'Blazer Tokio',
-        imagen: './imagenes/camperas/03.webp',
-        categoria: {
-            nombre: 'camperas',
-            id: 'camperas'
-        },
-        precio: 119250
-    },
-    {
-        id: 'campera-04',
-        titulo: 'Campera coimbra',
-        imagen: '../imagenes/camperas/04.webp',
-        categoria: {
-            nombre: 'camperas',
-            id: 'camperas'
-        },
-        precio: 1222
-    },
-    {
-        id: 'campera-05',
-        titulo: 'Camisaco tavira',
-        imagen: '../imagenes/camperas/05.webp',
-        categoria: {
-            nombre: 'camperas',
-            id: 'camperas'
-        },
-        precio: 71145
-    },
-
-    // PANTALONES (6)
-
-    {
-        id: 'pantalon-01',
-        titulo: 'PANTALON',
-        imagen: './imagenes/pantalones/01.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-        precio: 67425
-    },
-    {
-        id: 'pantalon-02',
-        titulo: 'PANTALON',
-        imagen: '../imagenes/pantalones/02.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-        precio: 74925
-    },
-    {
-        id: 'pantalon-03',
-        titulo: 'PANTALON',
-        imagen: '../imagenes/pantalones/03.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-        precio: 119250
-    },
-    {
-        id: 'pantalon-04',
-        titulo: 'PANTALON',
-        imagen: '../imagenes/pantalones/04.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-        precio: 74925
-    },
-    {
-        id: 'pantalon-05',
-        titulo: 'PANTALON',
-        imagen: '../imagenes/pantalones/05.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-
-        precio: 7
-
-    },
-    {
-        id: 'pantalon-06',
-        titulo: 'PANTALONasdasd',
-        imagen: './imagenes/pantalones/06.webp',
-        categoria: {
-            nombre: 'Pantalones',
-            id: 'pantalon'
-        },
-
-        precio: 7234324
-
-    },
-
-    // REMERAS 
-
-];
+import productos from './productos.js';
 
 const contenedorProductos = document.querySelector('#contenedor-productos');
 const botonesCategorias = document.querySelectorAll('.boton-categoria');
 const tituloPrinciapl = document.querySelector('.titulo-principal');
-let botonesAgregar = document.querySelectorAll('.producto-agregar')
+let botonesAgregar = document.querySelectorAll('.producto-agregar');
+const contadorCarrito = document.querySelector('#numerito');
 
 function cargarProductos(productosElegidos) {
 
@@ -176,3 +55,42 @@ botonesCategorias.forEach(boton => {
 
 });
 
+// Que los botones se actualicen cuando se cargan los productos
+function actualizarBotonesAAgregar(){
+    botonesAgregar = document.querySelectorAll('.producto-agregar');
+
+    botonesAgregar.forEach(boton =>{
+        boton.addEventListener('click', agregarAlCarrito);
+    });
+
+
+
+}
+
+const productosEnCarrito =  [];
+// Agrega los productos a un nuevo array
+function agregarAlCarrito(e){
+    const idBoton = e.currentTarget.id;
+   
+    const productoAgregado = productos.find(producto => producto.id === idBoton);
+
+    // Si el producto ya existe en el array, que aumente la cantidad.
+    if(productosEnCarrito.some(producto => producto.id === idBoton)){
+       const index =  productosEnCarrito.findIndex(producto => producto.id === idBoton);
+       productosEnCarrito[index].cantidad++;
+
+    } else{
+        productoAgregado.cantidad = 1;
+         productosEnCarrito.push(productoAgregado);
+    }
+ 
+    actualizarContador();
+
+    // Se agrega al localStroge para poder recuperar la informacion desde la pagina carrito
+    localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito));
+}
+
+function actualizarContador(){
+    let nuevoContador= productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad,0);
+    contadorCarrito.textContent = nuevoContador;
+ }
